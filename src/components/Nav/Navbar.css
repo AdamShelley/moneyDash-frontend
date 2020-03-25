@@ -1,0 +1,15 @@
+.navbar {
+  /* border: 1px solid blue; */
+  width: 25vw;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+}
+
+.navbar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5rem;
+}
