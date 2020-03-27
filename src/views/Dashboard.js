@@ -8,12 +8,18 @@ import RecentActivity from "../components/RecentActivity/RecentActivity";
 
 import "./Dashboard.css";
 
+const fakePerson = {
+  name: "Adam Shelley",
+  balance: 2556.5,
+  percentage: 40
+};
+
 const Dashboard = () => {
   return (
     <div className="dashboard">
       <SearchBar />
       <div className="layer1">
-        <TotalSummary />
+        <TotalSummary data={fakePerson} />
         <Accounts />
       </div>
       <div className="layer2">

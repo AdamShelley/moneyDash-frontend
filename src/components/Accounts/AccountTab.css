@@ -1,0 +1,40 @@
+.single-account {
+  background-color: #4d52e0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+.single-account:hover {
+  background-color: #4d52e0c9;
+}
+
+.account-name {
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.single-account i {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: white;
+  padding: 0;
+}
+
+.account-type {
+  /* margin-top: 4rem; */
+  font-size: 0.7rem;
+}
+
+.account-balance {
+  font-size: 1.5rem;
+  font-weight: 100;
+  align-self: center;
+}

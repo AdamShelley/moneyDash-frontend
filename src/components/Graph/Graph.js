@@ -6,9 +6,10 @@ import "./Graph.css";
 
 const Graph = () => {
   return (
-    <Card addedClass="card-graph">
-      <div className="graph-container">GRAPH CONTAINER</div>
-    </Card>
+    <div className="graph-container">
+      <h2>GRAPH CONTAINER</h2>
+      <Card addedClass="card-graph"></Card>
+    </div>
   );
 };
 
