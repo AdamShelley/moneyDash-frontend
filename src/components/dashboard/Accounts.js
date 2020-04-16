@@ -29,10 +29,10 @@ const Accounts = () => {
     <Card addedClass="card-accounts">
       <div className="account-summary">
         <Card>
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </Card>
         {accounts.map(account => (
-          <AccountTab details={account} />
+          <AccountTab key={account.name} details={account} />
         ))}
       </div>
     </Card>

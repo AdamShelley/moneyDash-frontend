@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import SearchBar from "../components/SearchBar/SearchBar";
 import TotalSummary from "../components/Summary/Summary";
-import Accounts from "../components/Accounts/Accounts";
+import Accounts from "../components/dashboard/Accounts";
 import Graph from "../components/Graph/Graph";
 import RecentActivity from "../components/RecentActivity/RecentActivity";
 
@@ -11,7 +11,7 @@ import "./Dashboard.css";
 const fakePerson = {
   name: "Adam Shelley",
   balance: 2556.5,
-  percentage: 40
+  percentage: 40,
 };
 
 const Dashboard = () => {

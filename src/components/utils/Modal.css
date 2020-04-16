@@ -1,0 +1,30 @@
+.modal {
+  z-index: 100;
+  position: fixed;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+  width: 20%;
+}
+
+.modal__header {
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  background: #fff;
+  color: #333;
+}
+
+.modal__header h2 {
+  margin: 0.5rem;
+}
+
+.modal__content {
+  padding: 1rem 0.5rem;
+}
+
+.modal__footer {
+  padding: 1rem 0.5rem;
+}

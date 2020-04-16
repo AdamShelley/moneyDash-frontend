@@ -3,13 +3,9 @@
   align-items: center;
   /* justify-content: flex-start; */
   cursor: pointer;
-  margin-top: 4rem;
+
   transition: all 0.1s ease-in-out;
   width: 100%;
-}
-
-.nav-link:first-child {
-  border-right: 3px solid #332a3a;
 }
 
 .nav-link:hover {

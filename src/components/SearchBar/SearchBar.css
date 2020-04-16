@@ -3,6 +3,9 @@
   height: 4rem;
   /* border-bottom: 1px solid red; */
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .search-bar > input {
@@ -14,4 +17,21 @@
   background-color: #fff;
   outline: none;
   font-size: 1.2rem;
+}
+
+.user-picture {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.user-img {
+  max-height: 40px;
 }

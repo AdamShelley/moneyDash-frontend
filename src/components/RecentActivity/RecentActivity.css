@@ -1,8 +1,49 @@
 .recent-activity {
   height: 100%;
-  width: 40%;
+  width: 35%;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
+  align-items: flex-start;
+  margin-left: 3rem;
+}
+
+.recent-activity h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #25244e;
+}
+
+.recent-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.recent-buttons > button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.recent-buttons > button:first-child {
+  margin-right: 1rem;
+  background-color: #25244e;
+  color: white;
+}
+
+.recent-buttons > button:first-child:hover {
+  background-color: #25244e7a;
+}
+
+.recent-buttons > button:last-child:hover {
+  background-color: #ccc;
 }

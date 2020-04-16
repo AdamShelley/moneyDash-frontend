@@ -1,0 +1,23 @@
+.logger-list {
+  width: 70%;
+  height: 60vh;
+  margin-top: 4rem;
+}
+
+.list-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.list-titles > p {
+  width: 10%;
+}
+
+.list-titles .list-titles--description {
+  width: 20%;
+  text-align: left;
+}

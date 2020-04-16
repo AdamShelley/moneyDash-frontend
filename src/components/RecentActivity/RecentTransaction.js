@@ -1,12 +1,13 @@
 import React from "react";
 
-import Card from "../utils/Card";
+// import Card from "../utils/Card";
 import "./RecentTransaction.css";
 
 const RecentTransaction = () => {
   return (
     <div className="recent-transaction">
-      <div className="icon">icon</div>
+      <i className="fas fa-home"></i>
+
       <div className="recent-middle">
         <h3>Monthly Home Rent</h3>
         <p>31 July 2020, 11:08PM</p>

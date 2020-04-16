@@ -10,7 +10,7 @@ const AccountTab = ({ details }) => {
         <h2 className="account-name">{details.name}</h2>
         <i className="fab fa-cc-visa"></i>
         <p className="account-type">{details.type}</p>
-        <p className="account-balance">£ {details.balance}</p>
+        <p className="account-balance">£ {details.balance.toFixed(2)}</p>
       </div>
     </Card>
   );

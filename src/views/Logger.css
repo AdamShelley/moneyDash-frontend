@@ -1,0 +1,15 @@
+.logger-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fafafb;
+}
+
+.logger-container h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 3rem;
+}

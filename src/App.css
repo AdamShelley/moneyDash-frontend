@@ -3,3 +3,39 @@
   width: 100vw;
   height: 100vh;
 }
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.form-control > input {
+  margin-top: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 90%;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.form-control > label {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.form-control > input:focus,
+.form-control > input:hover {
+  border-bottom: 1px solid #000;
+  /* width: 100%; */
+}
+
+.form-control > p {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

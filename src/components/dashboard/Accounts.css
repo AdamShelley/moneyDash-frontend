@@ -5,6 +5,15 @@
   align-items: flex-start;
 }
 
+.account-summary > div {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.account-summary > div:hover {
+  background-color: #ccc;
+}
+
 .account-summary i {
   font-size: 1.5rem;
   color: #9797b3;

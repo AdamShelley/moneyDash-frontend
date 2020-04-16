@@ -1,4 +1,40 @@
 .graph-container {
   height: 100%;
-  width: 65%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.graph-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.graph-top > h2 {
+  font-size: 1.1rem;
+  color: #25244e;
+}
+
+.graph-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.graph-buttons > button {
+  border: none;
+  color: #9797b3;
+  width: 5rem;
+  height: 2rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.graph-buttons > button:hover {
+  background-color: #fff;
 }

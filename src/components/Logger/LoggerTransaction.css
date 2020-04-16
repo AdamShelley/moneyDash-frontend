@@ -1,0 +1,36 @@
+.logger-transaction {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logger-transaction:nth-child(odd) {
+  background-color: #ccc;
+}
+
+.logger-transaction > i {
+  font-size: 0.8rem;
+  /* border: 1px solid black; */
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: #333;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.logger-transaction > p {
+  width: 10%;
+  /* text-align: left; */
+  color: #333;
+  text-align: center;
+}
+
+.logger-transaction .logger-transaction--description {
+  width: 20%;
+  text-align: left;
+}
