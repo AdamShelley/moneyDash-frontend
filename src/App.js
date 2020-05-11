@@ -18,7 +18,14 @@ import { useAuth } from "./hooks/auth-hook";
 import "./App.css";
 
 function App() {
-  const { token, login, logout, userId } = useAuth();
+  const {
+    token,
+    login,
+    logout,
+    userId,
+    userData,
+    updateUserBalance,
+  } = useAuth();
 
   let routes;
   if (token) {
@@ -61,6 +68,8 @@ function App() {
         logout: logout,
         token: token,
         userId: userId,
+        userData: userData,
+        updateUserBalance: updateUserBalance,
       }}
     >
       <Router>

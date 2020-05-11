@@ -52,6 +52,34 @@ const Logger = () => {
     setLoadedTransactions((prevState) => [transaction, ...prevState]);
   };
 
+  const deleteTransactionHandler = async (transaction) => {
+    console.log("deleting transaction");
+    console.log(transaction._id);
+    // Delete the item from the database
+    try {
+      await sendRequest(
+        `http://localhost:3001/api/finance`,
+        "DELETE",
+        JSON.stringify({
+          userId: auth.userId,
+          transactionId: transaction._id,
+        }),
+        {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+
+    // Set the loaded transactions to remove from the logger list
+    const filteredTransactions = loadedTransactions.filter(
+      (loaded) => loaded._id !== transaction._id
+    );
+    setLoadedTransactions(filteredTransactions);
+  };
+
   return (
     <div className="logger-container">
       {isLoading && <Loading />}
@@ -61,7 +89,12 @@ const Logger = () => {
         accounts={loadedAccounts}
         addTransaction={addTransactionHandler}
       />
-      {loadedTransactions && <LoggerList transactions={loadedTransactions} />}
+      {loadedTransactions && (
+        <LoggerList
+          deleteHandler={deleteTransactionHandler}
+          transactions={loadedTransactions}
+        />
+      )}
     </div>
   );
 };

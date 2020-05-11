@@ -5,6 +5,7 @@ import Card from "../utils/Card";
 import "./Summary.css";
 
 const Summary = ({ data }) => {
+  console.log(data);
   return (
     <Card addedClass="card-summary">
       <div className="total-summary">

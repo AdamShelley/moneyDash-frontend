@@ -34,7 +34,8 @@
 }
 
 .account-balance {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 100;
   align-self: center;
+  letter-spacing: 1px;
 }

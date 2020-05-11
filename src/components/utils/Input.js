@@ -10,11 +10,11 @@ const inputReducer = (state, action) => {
         value: action.val,
         isValid: true,
       };
-    case "TOUCH":
-      return {
-        ...state,
-        isTouched: true,
-      };
+    // case "TOUCH":
+    //   return {
+    //     ...state,
+    //     isTouched: true,
+    //   };
     default:
       return state;
   }
@@ -38,9 +38,9 @@ const Input = (props) => {
     dispatch({ type: "CHANGE", val: event.target.value });
   };
 
-  const touchHandler = () => {
-    dispatch({ type: "TOUCH" });
-  };
+  // const touchHandler = () => {
+  //   dispatch({ type: "TOUCH" });
+  // };
 
   const element =
     props.element === "input" ? (
@@ -50,10 +50,14 @@ const Input = (props) => {
         placeholder={props.placeholder}
         onChange={changeHandler}
         value={inputState.value}
-        onBlur={touchHandler}
+        // onBlur={touchHandler}
       />
     ) : (
-      <select id={props.id} onChange={changeHandler} onBlur={touchHandler}>
+      <select
+        id={props.id}
+        onChange={changeHandler}
+        // onBlur={touchHandler}
+      >
         {props.children}
       </select>
     );
@@ -64,7 +68,7 @@ const Input = (props) => {
         !inputState.isValid && inputState.isTouched && "form-control--invalid"
       }`}
     >
-      <label htmlFor={props.id}>{props.label}</label>
+      {props.label && <label htmlFor={props.id}>{props.label}</label>}
       {element}
       {!inputState.isValid && inputState.isTouched && <p>{props.errorText}</p>}
     </div>

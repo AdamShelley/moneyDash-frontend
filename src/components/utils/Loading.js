@@ -4,8 +4,8 @@ import "./Loading.css";
 
 const Loading = () => {
   return (
-    <div>
-      <p> Loading... </p>
+    <div className="spinner-container">
+      <div className="lds-dual-ring"></div>
     </div>
   );
 };

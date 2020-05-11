@@ -38,8 +38,24 @@
   font-size: 1rem;
   border: 2px solid #333;
   cursor: pointer;
+  transition: all 0.1s ease-out;
 }
 
 .btn-logout:hover {
-  background-color: #d6d6d6;
+  /* background-color: #d6d6d6; */
+  transform: scale(0.95);
+}
+
+.auth-logout-footer {
+  text-align: center;
+}
+
+.auth-logout-footer button {
+  padding: 0.5rem 2rem;
+  background-color: #333;
+  color: #fff;
+  font-weight: 200;
+  border-radius: 4px;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }

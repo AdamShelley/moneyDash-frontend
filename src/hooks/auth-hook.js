@@ -6,9 +6,10 @@ export const useAuth = () => {
   const [token, setToken] = useState(false);
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
+  const [userData, setUserData] = useState();
 
-  const login = useCallback((uid, token, expirationDate) => {
-    console.log(uid);
+  const login = useCallback((uid, token, user, expirationDate) => {
+    console.log(user);
     setToken(token);
     const tokenExpirationDate =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
@@ -19,11 +20,13 @@ export const useAuth = () => {
       "userData",
       JSON.stringify({
         userId: uid,
+        user: user,
         token: token,
         expiration: tokenExpirationDate.toISOString(),
       })
     );
     setUserId(uid);
+    setUserData(user);
   }, []);
 
   const logout = useCallback(() => {
@@ -31,6 +34,7 @@ export const useAuth = () => {
     setUserId(null);
     setTokenExpirationDate(null);
     localStorage.removeItem("userData");
+    setUserData(null);
   }, []);
 
   useEffect(() => {
@@ -54,10 +58,17 @@ export const useAuth = () => {
       login(
         storedData.userId,
         storedData.token,
+        storedData.user,
         new Date(storedData.expiration)
       );
     }
   }, [login]);
 
-  return { token, login, logout, userId };
+  const updateUserBalance = (newTransaction) => {
+    const current = userData.balance;
+    const newBalance = current + parseFloat(newTransaction);
+    setUserData({ ...userData, balance: newBalance });
+  };
+
+  return { token, login, logout, userId, userData, updateUserBalance };
 };

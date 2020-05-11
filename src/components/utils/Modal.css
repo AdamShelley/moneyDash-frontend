@@ -1,6 +1,7 @@
+/*  DEFAULT STYLES */
 .modal {
   z-index: 100;
-  position: fixed;
+  position: absolute;
   top: 40%;
   left: 60%;
   transform: translate(-50%, -50%);
@@ -8,6 +9,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 2px;
   width: 20%;
+  padding: 2rem;
 }
 
 .modal__header {
@@ -27,4 +29,138 @@
 
 .modal__footer {
   padding: 1rem 0.5rem;
+}
+
+/* LOGOUT MODAL */
+
+.modal__logout {
+  top: 40%;
+  left: 50%;
+}
+
+/* DELETE MODAL */
+.modal__delete {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 20rem;
+  height: 11rem;
+  padding: 0.5rem;
+  transform: translate(-55%, -35%);
+  border: 1px solid #adb8db;
+  border-radius: 2px;
+}
+
+.delete-header {
+  font-size: 0.6rem;
+  border-radius: 30px;
+}
+
+.delete-modal {
+  padding: 0;
+  margin: 0;
+}
+
+.delete-footer {
+  padding: 0.5rem;
+}
+
+/* ADD Account MODAL */
+.account-item__modal {
+  padding: 2rem;
+  width: 30%;
+  height: 70%;
+  top: 50%;
+}
+
+.account-item__modal form {
+  height: 95%;
+}
+
+.account-item__modal-header > h2 {
+  font-size: 1rem;
+}
+
+.account-item__modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.account-item__modal-content > p {
+  font-size: 0.8rem;
+  align-self: flex-start;
+  font-style: italic;
+  color: #54565e;
+  margin-top: 1rem;
+}
+
+.account-item__bank-type {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+
+  margin-top: 1rem;
+  cursor: pointer;
+  /* flex-grow: 4; */
+  /* max-height: 1rem; */
+}
+
+.account-item__bank-type--type {
+  border: 1px solid #adb8db;
+  padding: 1rem;
+  flex-grow: 2;
+  margin-right: 0.4rem;
+  margin-top: 0.4rem;
+  border-radius: 5px;
+  color: #7b8192;
+  font-weight: 100;
+  text-align: center;
+}
+
+.account-item__bank-type--type:hover {
+  border: 1px solid #7b8192;
+}
+
+.account-item__bank-type--type--active {
+  background-color: rgba(173, 184, 219, 0.068);
+  /* color: #25244e; */
+  color: #333;
+  border: 1px solid #132571;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+}
+
+.account-item__modal-actions {
+  /* width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  padding-bottom: 1rem; */
+  padding: 0;
+}
+
+.account-item__buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 2rem;
+}
+
+.account-item__modal-actions .btn-close-modal {
+  background-color: #fff;
+  color: #333;
+  align-self: center;
+  margin: 0;
+  transform: scale(1);
+}
+
+.account-item__modal-actions .btn-close-modal:hover {
+  transform: scale(0.98);
+  background-color: #fff;
 }

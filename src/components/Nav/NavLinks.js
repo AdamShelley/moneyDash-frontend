@@ -17,11 +17,13 @@ const NavLinks = () => {
   return (
     <React.Fragment>
       <Modal
+        asOverlay
         show={showModal}
         onCancel={closeModal}
+        className="modal__logout"
         header="Are you sure you want to logout?"
-        // contentClass="account-item__modal-content"
-        // footerClass="account-item__modal-actions"
+        contentClass="auth-logout-modal"
+        footerClass="auth-logout-footer"
         footer={<button onClick={auth.logout}>Logout</button>}
       ></Modal>
       <div className="nav-links">

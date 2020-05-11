@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import Input from "../utils/Input";
+
 import Loading from "../utils/Loading";
 import { useForm } from "../../hooks/useForm";
 import { useHttpClient } from "../../hooks/http-hook";
@@ -8,7 +9,8 @@ import { AuthContext } from "../../context/auth-context";
 
 import "./LoggerForm.css";
 
-// const accountId = "5e91c06df42faf16207913a2";
+// Get todays date for the datepicker.
+let today = new Date().toISOString().split("T")[0];
 
 const LoggerForm = ({ addTransaction, accounts }) => {
   const { isLoading, error, sendRequest } = useHttpClient();
@@ -34,8 +36,9 @@ const LoggerForm = ({ addTransaction, accounts }) => {
         isValid: false,
       },
       date: {
-        value: "2020-01-01",
-        isValid: false,
+        // value: "2020-01-01",
+        value: today,
+        isValid: true,
       },
     },
     false
@@ -66,6 +69,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
       );
 
       addTransaction(responseData.data);
+      auth.updateUserBalance(formState.inputs.amount.value);
     } catch (error) {
       console.log(error);
     }
@@ -75,15 +79,13 @@ const LoggerForm = ({ addTransaction, accounts }) => {
     setCurrentAccount(e.target.value);
   };
 
-  console.log(formState.isValid);
-
   return (
     <React.Fragment>
       {isLoading && <Loading />}
       {error && <p>{error}</p>}
       <form className="logger-form" onSubmit={transactionSubmitHandler}>
         <div className="select-container">
-          <label htmlFor="accountId">Account used</label>
+          {/* <label htmlFor="accountId">Account used</label> */}
           <select
             id="accountId"
             label="Account"
@@ -107,6 +109,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           element="input"
           type="text"
           label="Description"
+          // placeholder="Description"
           errorText="Please enter a valid description"
           onInput={inputHandler}
           initialValue={formState.inputs.description.value}
@@ -117,6 +120,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           element="input"
           type="number"
           label="Amount"
+          // placeholder="Amount"
           errorText="Please enter a valid amount"
           onInput={inputHandler}
           initialValue={formState.inputs.amount.value}
@@ -127,6 +131,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           element="input"
           type="text"
           label="Category"
+          // placeholder="Category"
           errorText="Please pick a category"
           onInput={inputHandler}
           initialValue={formState.inputs.category.value}
@@ -137,6 +142,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           element="input"
           type="date"
           label="Date"
+          // placeholder="Date"
           errorText="Please pick a date"
           onInput={inputHandler}
           initialValue={formState.inputs.date.value}

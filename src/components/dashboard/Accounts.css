@@ -1,21 +1,24 @@
 .account-summary {
   display: flex;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: flex-start;
+  overflow: scroll;
 }
 
 .account-summary > div {
   cursor: pointer;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
+  /* overflow: hidden; */
 }
 
 .account-summary > div:hover {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  transform: scale(0.98);
 }
 
 .account-summary i {
   font-size: 1.5rem;
   color: #9797b3;
-  padding: 0.2rem;
+  padding: 1rem;
 }

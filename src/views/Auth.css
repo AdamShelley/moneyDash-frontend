@@ -1,48 +1,81 @@
 .auth-page {
   display: flex;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/back.png") no-repeat;
+  flex-direction: column;
+  /* background: linear-gradient(
+      to bottom right,
+      rgba(56, 68, 73, 0.6),
+      rgba(56, 68, 73, 0.6)
+    ),
+    url("../img/back.png") no-repeat; */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../img/city-bg.jpg") no-repeat center center/cover;
+  background-color: #fafafa;
   background-size: cover;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.auth-header-container {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.auth-header-container > h1 {
+  color: #1c1c34;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.box-containers {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
 }
 
 .auth-header {
-  color: #333;
+  color: #1c1c34;
   letter-spacing: 1px;
   line-height: 1.8;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.auth-header {
+  padding: 1rem;
 }
 
 .auth-inputs {
-  padding: 1rem;
+  padding: 1rem 1rem;
   width: 100%;
-  margin-top: 1rem;
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .auth-form > button {
-  padding: 0.5rem 2rem;
-  color: #333;
+  padding: 0.8rem 2rem;
+  color: #fff;
+  background-color: #1c1c34;
   align-self: center;
   margin-top: 2rem;
-  border: 2px solid #333;
-  border-radius: 2px;
+  border: 2px solid #1c1c34;
+  border-radius: 8px;
   font-size: 0.8rem;
   letter-spacing: 1.5px;
   text-transform: lowercase;
   cursor: pointer;
   font-weight: 600;
+  width: 100%;
 }
 
 .auth-form > button:hover {
@@ -51,20 +84,22 @@
 }
 
 .auth-switchbutton {
-  padding: 1rem 2rem;
-  border: 2px solid #ccc;
-  background-color: none;
+  /* padding: 1rem 2rem; */
+  border: none;
+  color: #545cd4;
   font-size: 0.8rem;
   letter-spacing: 1px;
   align-self: center;
   margin-top: 1rem;
   cursor: pointer;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.2rem;
 }
 
 .auth-switchbutton:hover {
-  background-color: #ccc;
-  border: 2px solid transparent;
-  border-radius: 2px;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #545cd4;
+  /* color: #ccc; */
 }
 
 .auth-describe {
@@ -77,10 +112,22 @@
 
 .auth-describe > h2 {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .auth-describe > p {
+  margin-top: 1rem;
+}
+
+.auth-describe > i {
   margin-top: 3rem;
-  padding: 1rem;
+  font-size: 2rem;
+  color: var(--primary-color-1);
+  align-self: center;
+}
+
+.error-text {
+  align-self: center;
+  margin-top: 2rem;
+  color: red;
 }

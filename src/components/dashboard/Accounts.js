@@ -1,41 +1,38 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./Accounts.css";
 
 import AccountTab from "./AccountTab";
 import Card from "../utils/Card";
 
-// Fetch the accounts here?
-const accounts = [
-  {
-    name: "Nationwide",
-    balance: 5098.5,
-    type: "Visa"
-  },
-  {
-    name: "1st Direct",
-    balance: 503.1,
-    type: "Visa"
-  },
+const Accounts = ({ data }) => {
+  console.log(data);
 
-  {
-    name: "Santander",
-    balance: 1090.36,
-    type: "Mastercard"
-  }
-];
+  let history = useHistory();
 
-const Accounts = () => {
+  const addAccountHandler = () => {
+    console.log("Routing to accounts page");
+    // Route to the accounts page.
+    history.push("/accounts");
+  };
+
+  // hook to determine bank used?
+
   return (
-    <Card addedClass="card-accounts">
+    <div className="card-accounts">
       <div className="account-summary">
-        <Card>
-          <i className="fas fa-plus"></i>
+        <Card addedClass="card-account-summary">
+          <i className="fas fa-plus" onClick={addAccountHandler}></i>
         </Card>
-        {accounts.map(account => (
-          <AccountTab key={account.name} details={account} />
-        ))}
+        {data && data.length >= 1 ? (
+          data.map((account) => (
+            <AccountTab key={account._id} details={account} />
+          ))
+        ) : (
+          <p> Begin by Adding accounts, click the + to start. </p>
+        )}
       </div>
-    </Card>
+    </div>
   );
 };
 

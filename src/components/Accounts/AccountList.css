@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .account-list > ul {
@@ -10,5 +11,5 @@
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }

@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 import SingleAccount from "./SingleAccount";
+import Loading from "../utils/Loading";
 
 import "./AccountList.css";
 
-const AccountList = ({ accounts, filter }) => {
+const AccountList = ({ accounts, filter, active, deleted }) => {
   return (
     <div className="account-list">
       <ul>
         {accounts &&
           accounts.map((account, index) => {
             console.log(account);
+            const activeAccount = active === account._id;
             return (
-              <SingleAccount filter={filter} key={index} account={account} />
+              <SingleAccount
+                active={activeAccount}
+                filter={filter}
+                key={index}
+                account={account}
+                deleted={deleted}
+              />
             );
           })}
       </ul>

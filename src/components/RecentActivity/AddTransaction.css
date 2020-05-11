@@ -1,0 +1,33 @@
+.addTransactionOverlay {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  border-radius: 4px;
+  background-color: #25244e;
+
+  color: #fff;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.addTransactionOverlay > h2 {
+  color: #fff;
+  font-weight: 100;
+}
+
+.addTransactionOverlay > input {
+  padding: 0.5rem;
+}
+
+.addTransactionOverlay > button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  align-items: center;
+  cursor: pointer;
+}

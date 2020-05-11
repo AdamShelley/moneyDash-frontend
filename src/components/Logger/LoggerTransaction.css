@@ -10,10 +10,10 @@
 }
 
 .logger-transaction:nth-child(odd) {
-  background-color: #ccc;
+  background-color: #d6d6d68e;
 }
 
-.logger-transaction > i {
+.logger-transaction i {
   font-size: 0.8rem;
   /* border: 1px solid black; */
   padding: 0.8rem;
@@ -33,4 +33,14 @@
 .logger-transaction .logger-transaction--description {
   width: 20%;
   text-align: left;
+}
+
+.logger-transaction > .fa-trash-alt {
+  color: rgb(129, 58, 58);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.logger-transaction > .fa-trash-alt:hover {
+  color: red;
 }

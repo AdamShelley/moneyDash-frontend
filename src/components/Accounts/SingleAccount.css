@@ -1,13 +1,51 @@
 .account {
   width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.account-page-card > i {
+  align-self: flex-end;
+}
+
+.account-page-card > i:hover {
+  color: #ccc;
 }
 
 .account-page-card > h3 {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 300;
+  font-size: 1.1rem;
   letter-spacing: 2px;
+  flex: 2;
 }
 
 .account-page-card > p {
-  font-weight: 900;
+  font-weight: 100;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.account-deletion__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 1rem; */
+}
+
+.btn-delete-account {
+  border-radius: 2px;
+  background-color: #162b82;
+  border: 1px solid #162b82;
+}
+
+.btn-delete-account:hover {
+  background-color: #162b82;
+  border: 1px solid #162b82;
+}
+
+.btn-delete-account--close {
+  border-radius: 2px;
+  border: 1px solid #adb8dbb6;
 }

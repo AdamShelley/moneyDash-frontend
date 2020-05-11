@@ -44,7 +44,11 @@ const Auth = () => {
           }
         );
         console.log(responseData);
-        auth.login(responseData.user._id, responseData.token);
+        auth.login(
+          responseData.user._id,
+          responseData.token,
+          responseData.user
+        );
       } catch (error) {
         console.log(error);
       }
@@ -63,7 +67,11 @@ const Auth = () => {
           }
         );
 
-        auth.login(responseData.user._id, responseData.token);
+        auth.login(
+          responseData.user._id,
+          responseData.token,
+          responseData.user
+        );
       } catch (error) {
         console.log(error);
       }
@@ -90,73 +98,70 @@ const Auth = () => {
 
   return (
     <div className="auth-page">
-      <Card addedClass="card-authentication">
-        {isLoading && <Loading />}
-        <h2 className="auth-header">
-          {isLoginMode ? "Login to MoneyDash" : "Signup to MoneyDash"}
-        </h2>
-        <hr />
-        <div className="auth-inputs">
-          <form className="auth-form" onSubmit={authSubmitHandler}>
-            {!isLoginMode && (
+      <div className="box-containers">
+        <Card addedClass="card-authentication">
+          <div className="auth-header-container">
+            <h1>MoneyDash</h1>
+          </div>
+          {isLoading && <Loading />}
+          <h2 className="auth-header">
+            {isLoginMode ? "Sign-in to your account" : "Signup for MoneyDash"}
+          </h2>
+          <hr />
+          <div className="auth-inputs">
+            <form className="auth-form" onSubmit={authSubmitHandler}>
+              {!isLoginMode && (
+                <Input
+                  element="input"
+                  id="name"
+                  type="text"
+                  label="Your Name"
+                  errorText="Please enter your name"
+                  onInput={inputHandler}
+                />
+              )}
               <Input
+                id="email"
                 element="input"
-                id="name"
-                type="text"
-                label="Your Name"
-                errorText="Please enter your name"
+                type="email"
+                label="Email"
+                errorText="Please enter a valid email address"
                 onInput={inputHandler}
               />
-            )}
-            <Input
-              id="email"
-              element="input"
-              type="email"
-              label="Email"
-              errorText="Please enter a valid email address"
-              onInput={inputHandler}
-            />
-            <Input
-              id="password"
-              element="input"
-              type="password"
-              label="Password"
-              errorText="Please enter a valid Password. At least 5 characters"
-              onInput={inputHandler}
-            />
+              <Input
+                id="password"
+                element="input"
+                type="password"
+                label="Password"
+                errorText="Please enter a valid Password. At least 5 characters"
+                onInput={inputHandler}
+              />
 
-            <button type="submit" disabled={!formState.isValid}>
-              {isLoginMode ? "LOGIN" : "Signup"}
-            </button>
-          </form>
-        </div>
-        <button className="auth-switchbutton" onClick={switchModeHandler}>
-          Switch to {isLoginMode ? "Signup" : "Login"}
-        </button>
+              <button type="submit" disabled={!formState.isValid}>
+                {isLoginMode ? "LOGIN" : "Signup"}
+              </button>
+            </form>
+          </div>
+          <button className="auth-switchbutton" onClick={switchModeHandler}>
+            {isLoginMode
+              ? "Don't have an account? Sign up!"
+              : "Have an account? Log in!"}
+          </button>
 
-        {error && <p>{error}</p>}
-      </Card>
-      <Card addedClass="card-describe">
-        <div className="auth-describe">
-          <h2>Reasons to sign-up</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-            laborum.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            repudiandae.
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Cupiditate, eos.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-            laborum.
-          </p>
-        </div>
-      </Card>
+          {error && <p className="error-text">{error}</p>}
+        </Card>
+        {/* <Card addedClass="card-describe">
+          <div className="auth-describe">
+            <h2>Reasons to sign-up</h2>
+            <i className="fas fa-user-graduate"></i>
+            <p>Manage your household expenses in a quick and simple way.</p>
+            <i className="fas fa-signal"></i>
+            <p>See your progress mapped out by day, month, year.</p>
+            <i className="fas fa-money-check-alt"></i>
+            <p>Easy to understand, free to use.</p>
+          </div>
+        </Card> */}
+      </div>
     </div>
   );
 };

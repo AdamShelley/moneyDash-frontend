@@ -1,3 +1,7 @@
+:root {
+  --primary-color-1: #25244e;
+}
+
 .App {
   display: flex;
   width: 100vw;
@@ -9,28 +13,35 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
   width: 100%;
 }
 
 .form-control > input {
-  margin-top: 0.2rem;
+  padding: 0 0.5rem;
+  /* margin-top: 0.2rem; */
   border: none;
   border-bottom: 1px solid #ccc;
   width: 90%;
   height: 30px;
   transition: all 0.3s ease-in-out;
   outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14);
 }
 
 .form-control > label {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #1c1c34;
 }
 
 .form-control > input:focus,
 .form-control > input:hover {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #25244e;
+  color: #ccc;
   /* width: 100%; */
 }
 
@@ -38,4 +49,36 @@
   color: red;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+#email,
+#password,
+#name,
+#description,
+#amount,
+#category,
+#date,
+#newAccount,
+#newAccountBalance {
+  border: 1px solid #adb8db;
+  box-shadow: none;
+}
+
+#email,
+#password,
+#name,
+#newAccount,
+#newAccountBalance {
+  border-radius: 5px;
+  padding: 1.2rem 1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+#email:focus,
+#password:focus,
+#name:focus {
+  background-color: #babed7;
+  border: 1px solid #1c1c34;
+  color: #333;
 }
