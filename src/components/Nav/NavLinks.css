@@ -50,6 +50,15 @@
   text-align: center;
 }
 
+.modal__logout--buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
 .auth-logout-footer button {
   padding: 0.5rem 2rem;
   background-color: #333;
@@ -58,4 +67,8 @@
   border-radius: 4px;
   font-size: 1rem;
   letter-spacing: 1px;
+}
+
+.btn-cancel-logout {
+  margin: 0;
 }

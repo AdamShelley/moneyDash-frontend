@@ -65,7 +65,10 @@ const RecentActivity = () => {
           )}
         </ul>
         <div className="recent-buttons">
-          <button className="btn" onClick={() => setShowAddTransaction(true)}>
+          <button
+            className="btn"
+            // onClick={() => setShowAddTransaction(true)}
+          >
             New Transaction
           </button>
           <button

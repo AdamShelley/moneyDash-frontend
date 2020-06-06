@@ -2,13 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 
 import LoggerForm from "../components/Logger/LoggerForm";
 import LoggerList from "../components/Logger/LoggerList";
+import Categories from "../components/Logger/Categories";
 import Loading from "../components/utils/Loading";
 import { AuthContext } from "../context/auth-context";
 import { useHttpClient } from "../hooks/http-hook";
 
 import "./Logger.css";
-
-const userId = "5e90ca49fcde55eb3c4682ee";
 
 const Logger = () => {
   const [loadedTransactions, setLoadedTransactions] = useState();
@@ -90,10 +89,14 @@ const Logger = () => {
         addTransaction={addTransactionHandler}
       />
       {loadedTransactions && (
-        <LoggerList
-          deleteHandler={deleteTransactionHandler}
-          transactions={loadedTransactions}
-        />
+        <div className="logger-content-container">
+          <LoggerList
+            allowDelete
+            deleteHandler={deleteTransactionHandler}
+            transactions={loadedTransactions}
+          />
+          <Categories transactions={loadedTransactions} />
+        </div>
       )}
     </div>
   );

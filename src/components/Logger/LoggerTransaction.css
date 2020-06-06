@@ -6,7 +6,12 @@
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: #fff;
+}
+
+.logger-transaction-income {
+  border: 1px solid green !important;
 }
 
 .logger-transaction:nth-child(odd) {

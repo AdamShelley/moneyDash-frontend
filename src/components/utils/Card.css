@@ -63,9 +63,21 @@
 
 .card-logger-list {
   height: 90%;
-  padding: 2rem;
+  padding: 0rem 0.5rem;
+  border-radius: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  box-shadow: none;
+  border-top: 2px solid #25244e;
+  border-bottom: 2px solid #25244e;
+  /* background-color: #fafafa; */
+}
+
+.categories-container-card {
+  height: 90%;
+  box-shadow: none;
+  background-color: #fafafa;
+  margin-top: 1.5rem;
 }
 
 .card-authentication,
@@ -104,7 +116,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: #fff;
   border-radius: 10px;
   margin-right: 1rem;
@@ -114,4 +126,9 @@
   background-color: var(--primary-color-1);
   transform: scale(1.1);
   color: white;
+}
+
+.account-page-card-modal {
+  opacity: 0.5;
+  transition: all 0.7ts ease-in-out;
 }

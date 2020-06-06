@@ -8,6 +8,14 @@
 
 .account-page-card > i {
   align-self: flex-end;
+  opacity: 0;
+  visbility: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.account-page-card:hover i {
+  opacity: 1;
+  visibility: visible;
 }
 
 .account-page-card > i:hover {

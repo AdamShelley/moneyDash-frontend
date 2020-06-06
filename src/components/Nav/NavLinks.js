@@ -22,9 +22,17 @@ const NavLinks = () => {
         onCancel={closeModal}
         className="modal__logout"
         header="Are you sure you want to logout?"
-        contentClass="auth-logout-modal"
+        headerClass="modal__logout--header"
+        contentClass="modal__logout--content"
         footerClass="auth-logout-footer"
-        footer={<button onClick={auth.logout}>Logout</button>}
+        footer={
+          <div className="modal__logout--buttons">
+            <button onClick={auth.logout}>Logout</button>
+            <button className="btn btn-cancel-logout" onClick={closeModal}>
+              Cancel
+            </button>
+          </div>
+        }
       ></Modal>
       <div className="nav-links">
         {auth.isLoggedIn && (

@@ -5,11 +5,19 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #fafafb;
+  /* background-color: #1e1e1f; */
+  background-color: #fff;
 }
 
 .logger-container h1 {
   font-size: 1.5rem;
   font-weight: 300;
   margin-top: 3rem;
+}
+
+.logger-content-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }

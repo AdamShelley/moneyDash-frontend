@@ -36,6 +36,92 @@
 .modal__logout {
   top: 40%;
   left: 50%;
+  padding: 0.8rem;
+  text-align: center;
+  line-height: 2;
+  width: 20rem;
+}
+
+.modal__logout--header {
+  font-size: 0.8rem;
+}
+
+.modal__logout--content {
+  padding: 0;
+  margin: 0;
+}
+
+/* SHOW OPTIONS MODAL */
+
+.modal__options {
+  background-color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+  position: absolute;
+  transform: translate(-60%, -65%);
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background-color: #232f34;
+}
+
+.modal__options > form {
+  width: 100%;
+}
+
+.modal__options--header {
+  padding: 0;
+  margin: 0;
+}
+
+.modal__options--footer {
+  padding: 0;
+  margin: 0;
+}
+
+.modal__options--content {
+}
+.modal__options--buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+}
+
+.modal__options--buttons > button {
+  width: 100%;
+  text-align: center;
+  border: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2;
+  cursor: pointer;
+  text-align: left;
+  background-color: #232f34;
+  color: #fff;
+}
+/* 
+.modal__options--buttons > button:first-child {
+  color: green;
+}
+
+.modal__options--buttons > button:nth-child(2) {
+  color: red;
+} */
+
+.modal__options--buttons > button:last-child {
+  margin-top: 0.5rem;
+  border-top: 2px solid #ccc;
+}
+
+.modal__options--buttons > button:hover {
+  color: #7b8192;
+}
+
+.modal__options--buttons > button:nth-child(2):hover {
+  color: red;
 }
 
 /* DELETE MODAL */
@@ -52,8 +138,17 @@
 }
 
 .delete-header {
-  font-size: 0.6rem;
   border-radius: 30px;
+}
+
+.delete-header h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.delete-header h4 > span {
+  font-weight: 800;
+  display: inline-block;
 }
 
 .delete-modal {
@@ -63,6 +158,33 @@
 
 .delete-footer {
   padding: 0.5rem;
+}
+
+/* EDIT MODAL */
+.modal__edit {
+  width: 10rem;
+  transform: translate(-65%, -45%);
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background-color: #fff;
+  color: #132571;
+  padding: 0.5rem;
+}
+
+.modal__edit--content {
+  font-size: 0.8rem;
+}
+
+#editAccountName {
+  color: #132571;
+  padding: 0.5rem;
+  box-shadow: none;
+  border: 1px solid #222222;
+}
+
+#editAccountBalance {
+  box-shadow: none;
+  border: 1px solid #222222;
 }
 
 /* ADD Account MODAL */

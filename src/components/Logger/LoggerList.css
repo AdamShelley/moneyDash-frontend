@@ -1,7 +1,7 @@
 .logger-list {
-  width: 70%;
-  height: 60vh;
-  margin-top: 4rem;
+  width: 60%;
+  height: 70vh;
+  margin-top: 5rem;
 }
 
 .list-titles {
@@ -11,6 +11,7 @@
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .list-titles > p {

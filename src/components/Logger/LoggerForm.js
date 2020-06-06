@@ -15,6 +15,7 @@ let today = new Date().toISOString().split("T")[0];
 const LoggerForm = ({ addTransaction, accounts }) => {
   const { isLoading, error, sendRequest } = useHttpClient();
   const [currentAccount, setCurrentAccount] = useState();
+  const [incomeButton, setIncomeButton] = useState(false);
   const auth = useContext(AuthContext);
 
   const [formState, inputHandler] = useForm(
@@ -58,6 +59,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
             amount: formState.inputs.amount.value,
             category: formState.inputs.category.value,
             date: formState.inputs.date.value,
+            income: incomeButton,
           },
           userId: auth.userId,
           accountId: currentAccount,
@@ -93,7 +95,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
             value={currentAccount || ""}
           >
             <option value="" disabled>
-              Account
+              Select Account
             </option>
             {accounts &&
               accounts.accounts.map((account) => (
@@ -148,12 +150,21 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           initialValue={formState.inputs.date.value}
           initialIsValid={formState.inputs.date.isValid}
         />
+        <div
+          tabindex="0"
+          className={`btn btn-select-income ${
+            incomeButton ? "btn-select-income-active" : ""
+          }`}
+          onClick={() => setIncomeButton((prev) => !prev)}
+        >
+          Inflow
+        </div>
         <button
           className="btn btn-add-transaction"
           type="submit"
           disabled={!formState.isValid}
         >
-          Add transaction
+          Log
         </button>
       </form>
     </React.Fragment>
