@@ -32,6 +32,10 @@
   cursor: pointer;
 }
 
+.user-picture:hover {
+  filter: brightness(80%);
+}
+
 .user-img {
   max-height: 40px;
 }

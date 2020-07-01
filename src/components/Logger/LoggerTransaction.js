@@ -6,36 +6,42 @@ import "./LoggerTransaction.css";
 const LoggerTransaction = ({ transaction, deleteHandler, allowDelete }) => {
   console.log(transaction);
   return (
-    <div
-      className={`logger-transaction ${
-        transaction.income ? "logger-transaction-income" : ""
-      }`}
-    >
-      {transaction.income ? (
-        <p>Inflow</p>
-      ) : (
-        <i className="fas fa-shopping-cart"></i>
-      )}
+    // <div
+    //   className={`logger-transaction ${
+    //     transaction.income ? "logger-transaction-income" : ""
+    //   }`}
+    // >
+    <React.Fragment>
+      <td className="text-align-center">
+        {transaction.income ? (
+          <p>Inflow</p>
+        ) : (
+          <i className="fas fa-shopping-cart"></i>
+        )}
+      </td>
 
-      <p>{transaction.accountName}</p>
-      <p>{transaction.category}</p>
-      <p className="logger-transaction--description">
+      <td>{transaction.accountName}</td>
+      <td>{transaction.category}</td>
+      <td className="logger-transaction--description">
         {transaction.description}
-      </p>
-      <p>£{transaction.amount.toFixed(2)}</p>
+      </td>
+      <td>£{transaction.amount.toFixed(2)}</td>
 
-      <p>
+      <td>
         {/* {day}-{month}-{year} */}
         <Moment format="DD/MM/YY">{transaction.date}</Moment>
-      </p>
+      </td>
 
       {allowDelete && (
-        <i
-          onClick={() => deleteHandler(transaction)}
-          className="far fa-trash-alt"
-        ></i>
+        <td className="text-align-center">
+          <i
+            onClick={() => deleteHandler(transaction)}
+            className="far fa-trash-alt"
+          ></i>
+        </td>
       )}
-    </div>
+      {/* </div> */}
+    </React.Fragment>
   );
 };
 
