@@ -44,7 +44,7 @@ const Categories = ({ transactions }) => {
       <Card addedClass="categories-container-card">
         <h2>Where did your money go?</h2>
         <ul>
-          {data.forEach((item) => console.log(item))}
+          {/* {data.forEach((item) => console.log(item))} */}
           {data &&
             totalSpend &&
             data.map((item) => (

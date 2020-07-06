@@ -20,7 +20,7 @@ const SingleAccount = ({
   modalIsShowing,
   modalHidden,
 }) => {
-  const { isLoading, sendRequest, error } = useHttpClient();
+  const { sendRequest } = useHttpClient();
   const [showOptions, setShowOptions] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [showEdit, setShowEdit] = useState();

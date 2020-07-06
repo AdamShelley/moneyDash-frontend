@@ -1,0 +1,9 @@
+.logger-box-container {
+  padding: 0.2rem;
+}
+
+.logger-box {
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+}

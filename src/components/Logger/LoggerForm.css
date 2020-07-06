@@ -7,11 +7,12 @@
 
 .logger-form {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   min-height: 10vh;
   /* margin-top: 2rem; */
-  width: 80%;
+  width: 100%;
 }
 
 /* .logger-form .logger-form--inputs {
@@ -29,19 +30,21 @@
 .select-container {
   margin-right: 1rem;
   /* align-self: center; */
+  width: 100%;
 }
 
 .logger-form #accountId {
   /* display: block; */
   font-size: 1rem;
   font-weight: 300;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   border-radius: 2px !important;
   -webkit-appearance: none;
   background-color: #fff;
   min-width: 10rem;
+  width: 100%;
   align-self: center;
-  height: 30px;
+  height: 35px;
   border: 1px solid #adb8db;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -57,7 +60,8 @@
   border: 1px solid #25244e;
   height: 2rem;
   font-size: 0.8rem;
-  margin-right: 2rem;
+
+  align-self: center;
 }
 
 .btn-select-income-active {
@@ -68,13 +72,14 @@
 .btn-add-transaction {
   background-color: #25244e;
   color: white;
-  align-self: flex-end;
+  align-self: center;
   padding: 0 2rem;
   /* margin-top: 2.5rem; */
   transform: scale(1);
   transition: all 0.1s ease-in;
   font-size: 0.8rem;
   margin: 0;
+  margin-top: 1rem;
   border: none;
   height: 2rem;
 }

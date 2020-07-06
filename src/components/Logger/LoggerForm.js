@@ -12,7 +12,7 @@ import "./LoggerForm.css";
 // Get todays date for the datepicker.
 let today = new Date().toISOString().split("T")[0];
 
-const LoggerForm = ({ addTransaction, accounts }) => {
+const LoggerForm = ({ addTransaction, accounts, submitted }) => {
   const { isLoading, error, sendRequest } = useHttpClient();
   const [currentAccount, setCurrentAccount] = useState();
   const [incomeButton, setIncomeButton] = useState(false);
@@ -72,6 +72,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
 
       addTransaction(responseData.data);
       auth.updateUserBalance(formState.inputs.amount.value);
+      submitted();
     } catch (error) {
       console.log(error);
     }
@@ -151,7 +152,7 @@ const LoggerForm = ({ addTransaction, accounts }) => {
           initialIsValid={formState.inputs.date.isValid}
         />
         <div
-          tabindex="0"
+          tabIndex="0"
           className={`btn btn-select-income ${
             incomeButton ? "btn-select-income-active" : ""
           }`}

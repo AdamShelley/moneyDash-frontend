@@ -12,7 +12,7 @@ import { useHttpClient } from "../hooks/http-hook";
 import { useForm } from "../hooks/useForm.js";
 
 const Accounts = () => {
-  const { isLoading, error, sendRequest } = useHttpClient();
+  const { error, sendRequest } = useHttpClient();
 
   const [showModal, setShowModal] = useState(false);
   const [loadedAccounts, setLoadedAccounts] = useState();
@@ -145,7 +145,8 @@ const Accounts = () => {
   return (
     <React.Fragment>
       <Modal
-        // asOverlay
+        asOverlay
+        overlayTransparent
         className="account-item__modal"
         show={showModal}
         onCancel={closeModalHandler}

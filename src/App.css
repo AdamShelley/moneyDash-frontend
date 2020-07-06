@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  /* margin-top: 0.5rem; */
+  margin-top: 0.5rem;
   width: 100%;
 }
 
@@ -22,10 +22,11 @@
   /* margin-top: 0.2rem; */
   border: none;
   border-bottom: 1px solid #ccc;
-  width: 90%;
+  width: 100%;
   height: 30px;
   transition: all 0.3s ease-in-out;
   outline: none;
+  color: #ccc;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14);
 }
 
@@ -34,14 +35,14 @@
   font-size: 0.8rem;
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #1c1c34;
 }
 
 .form-control > input:focus,
 .form-control > input:hover {
   border-bottom: 1px solid #25244e;
-  color: #ccc;
+  color: #25244e;
   /* width: 100%; */
 }
 
@@ -62,6 +63,7 @@
 #newAccountBalance {
   border: 1px solid #adb8db;
   box-shadow: none;
+  height: 40px;
 }
 
 #email,

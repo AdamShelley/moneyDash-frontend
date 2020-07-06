@@ -3,6 +3,7 @@
   min-height: 10%;
   padding: 0.5rem;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .logger-transaction-income {
@@ -46,10 +47,28 @@
   cursor: pointer;
 }
 
+.far.fa-trash-alt {
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.delete-container:hover .far.fa-trash-alt {
+  opacity: 1;
+}
+
 .logger-transaction > .fa-trash-alt:hover {
   color: red;
 }
 
 .text-align-center {
   text-align: center;
+}
+
+.income-color {
+  color: rgb(71, 165, 79);
+  border: 1px solid rgb(71, 165, 79);
+}
+
+.text-bold {
+  font-weight: 900;
 }

@@ -3,7 +3,7 @@
   height: 70vh;
   margin-top: 5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -12,11 +12,13 @@ table {
   /* width: 100%; */
   width: 100%;
   max-height: 90%;
-  padding: 0rem 0.5rem;
+  padding: 0 1rem;
   border-radius: 0;
   display: block;
   overflow-y: scroll;
   box-shadow: none;
+  position: relative;
+
   /* border-top: 2px solid #25244e; */
   /* border-bottom: 2px solid #25244e; */
   /* background-color: #fafafa; */
@@ -25,9 +27,9 @@ table {
 table th {
   color: #d5dde5;
   background: #25244e;
-  border-bottom: 4px solid #9ea7af;
+  /* border-bottom: 4px solid #9ea7af; */
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 300;
   padding: 14px;
   text-align: left;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -36,19 +38,19 @@ table th {
 
 table tbody tr td {
   background: #ffffff;
+  color: #666b85;
   padding: 0.8rem;
   text-align: left;
   vertical-align: middle;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 13px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #c1c3d1;
-  border-right: none;
+  /* text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1); */
+  border-bottom: 1px solid #c1c3d1;
 }
 
-table tbody tr:nth-child(odd) td {
+/* table tbody tr:nth-child(odd) td {
   background: #ebebeb;
-}
+} */
 
 .list-titles {
   display: flex;
@@ -67,4 +69,52 @@ table tbody tr:nth-child(odd) td {
 .list-titles .list-titles--description {
   width: 20%;
   text-align: left;
+}
+
+.addTransactionButton {
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  transition: letter-spacing 0.2s ease-out;
+
+  padding: 0.5rem;
+}
+
+.fas.fa-plus {
+  font-size: 30px;
+
+  transition: all 0.1s ease-out;
+  margin-right: 1rem;
+}
+
+.addTransactionButton:hover .fas.fa-plus {
+  color: #25244e;
+}
+
+.addTransactionButton:hover {
+  color: #25244e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.transaction__modal {
+  left: 40%;
+  top: 55%;
+  height: 60%;
+  width: 20%;
+}
+
+.transaction__modal--header {
+  font-size: 12px;
+}
+
+.transaction__modal--content label {
+  margin-top: 0.5rem !important;
 }

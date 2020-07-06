@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import LoggerForm from "../components/Logger/LoggerForm";
+import LoggerTop from "../components/Logger/LoggerTop";
 import LoggerList from "../components/Logger/LoggerList";
 import Categories from "../components/Logger/Categories";
 import Loading from "../components/utils/Loading";
@@ -48,6 +49,7 @@ const Logger = () => {
   }, [auth.token, auth.userId, sendRequest]);
 
   const addTransactionHandler = (transaction) => {
+    console.log("Add Transaction Handler");
     setLoadedTransactions((prevState) => [transaction, ...prevState]);
   };
 
@@ -83,14 +85,23 @@ const Logger = () => {
     <div className="logger-container">
       {isLoading && <Loading />}
       {error && <p>{error}</p>}
-      <h1>Log Expenses</h1>
-      <LoggerForm
+      <h1>Expense log</h1>
+      {/* <LoggerForm
         accounts={loadedAccounts}
         addTransaction={addTransactionHandler}
-      />
+      /> */}
       {loadedTransactions && (
         <div className="logger-content-container">
+          {loadedAccounts && (
+            <LoggerTop
+              accounts={loadedAccounts.accounts}
+              transactions={loadedTransactions}
+            />
+          )}
           <LoggerList
+            loggerPage
+            accounts={loadedAccounts}
+            addTransaction={addTransactionHandler}
             allowDelete
             deleteHandler={deleteTransactionHandler}
             transactions={loadedTransactions}

@@ -16,7 +16,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const auth = useContext(AuthContext);
-  const { error, isLoading, sendRequest, clearError } = useHttpClient();
+  const { isLoading, sendRequest } = useHttpClient();
   const [accounts, setAccounts] = useState();
 
   // Fetch the user accounts

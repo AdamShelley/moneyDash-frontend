@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
 
-import Input from "../utils/Input";
+// import Input from "../utils/Input";
 import "./AddTransaction.css";
 
 const AddTransaction = (props) => {

@@ -13,20 +13,24 @@ const ModalOverlay = (props) => {
           <h2>{props.header}</h2>
         </header>
       )}
-      <form
-        onSubmit={
-          props.onSubmit ? props.onSubmit : (event) => event.preventDefault()
-        }
-      >
-        <div className={`modal__content ${props.contentClass}`}>
-          {props.children}
-        </div>
-        {!props.noFooter && (
-          <footer className={`modal__footer ${props.footerClass}`}>
-            {props.footer}
-          </footer>
-        )}
-      </form>
+      {props.noForm ? (
+        <div className="form-content">{props.children}</div>
+      ) : (
+        <form
+          onSubmit={
+            props.onSubmit ? props.onSubmit : (event) => event.preventDefault()
+          }
+        >
+          <div className={`modal__content ${props.contentClass}`}>
+            {props.children}
+          </div>
+          {!props.noFooter && (
+            <footer className={`modal__footer ${props.footerClass}`}>
+              {props.footer}
+            </footer>
+          )}
+        </form>
+      )}
     </div>
   );
   if (props.notModalHook) {
@@ -42,7 +46,15 @@ const ModalOverlay = (props) => {
 const Modal = (props) => {
   return (
     <React.Fragment>
-      {props.show && props.asOverlay && <Backdrop onClick={props.onCancel} />}
+      {/* Black background Modal */}
+      {props.show && props.asOverlay && !props.overlayTransparent && (
+        <Backdrop onClick={props.onCancel} />
+      )}
+      {/* Transparent background Modal */}
+      {props.show && props.asOverlay && props.overlayTransparent && (
+        <Backdrop transparentModal onClick={props.onCancel} />
+      )}
+      {/* No background */}
       {props.show && <ModalOverlay {...props} />}
     </React.Fragment>
   );

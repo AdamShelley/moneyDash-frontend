@@ -12,7 +12,7 @@ import "./RecentActivity.css";
 const RecentActivity = () => {
   let history = useHistory();
   const auth = useContext(AuthContext);
-  const { error, clearError, isLoading, sendRequest } = useHttpClient();
+  const { sendRequest } = useHttpClient();
   const [latestTransactions, setLatestTransactions] = useState();
   const [showAddTransaction, setShowAddTransaction] = useState(false);
 

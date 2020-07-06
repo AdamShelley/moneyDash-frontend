@@ -4,7 +4,7 @@ import Moment from "react-moment";
 import "./LoggerTransaction.css";
 
 const LoggerTransaction = ({ transaction, deleteHandler, allowDelete }) => {
-  console.log(transaction);
+  // console.log(transaction);
   return (
     // <div
     //   className={`logger-transaction ${
@@ -14,7 +14,7 @@ const LoggerTransaction = ({ transaction, deleteHandler, allowDelete }) => {
     <React.Fragment>
       <td className="text-align-center">
         {transaction.income ? (
-          <p>Inflow</p>
+          <p className="income-color">Inflow</p>
         ) : (
           <i className="fas fa-shopping-cart"></i>
         )}
@@ -25,7 +25,7 @@ const LoggerTransaction = ({ transaction, deleteHandler, allowDelete }) => {
       <td className="logger-transaction--description">
         {transaction.description}
       </td>
-      <td>£{transaction.amount.toFixed(2)}</td>
+      <td className="text-bold">£{transaction.amount.toFixed(2)}</td>
 
       <td>
         {/* {day}-{month}-{year} */}
@@ -33,7 +33,7 @@ const LoggerTransaction = ({ transaction, deleteHandler, allowDelete }) => {
       </td>
 
       {allowDelete && (
-        <td className="text-align-center">
+        <td className="delete-container text-align-center">
           <i
             onClick={() => deleteHandler(transaction)}
             className="far fa-trash-alt"
