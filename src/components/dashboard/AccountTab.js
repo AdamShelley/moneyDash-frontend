@@ -8,13 +8,13 @@ import "./AccountTab.css";
 const AccountTab = ({ details, background }) => {
   let bankName = details.name;
 
-  const backgroundColor = bankColor(bankName);
+  const bankInfo = bankColor(bankName);
 
   return (
     <Card addedClass="account-card">
       <div
         className="single-account"
-        style={{ backgroundColor: backgroundColor || "#4d52e0" }}
+        style={{ backgroundColor: bankInfo.backgroundColor || "#4d52e0" }}
       >
         <h2 className="account-name">{details.name}</h2>
         <i className="fab fa-cc-visa"></i>

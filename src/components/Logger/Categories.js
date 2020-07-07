@@ -2,36 +2,13 @@ import React from "react";
 
 import Card from "../utils/Card";
 import CategoryItem from "./CategoryItem";
+import { categoryFilter } from "../utils/categoryFilter";
 import "./Categories.css";
 
 const Categories = ({ transactions }) => {
-  let data = [];
   let totalSpend = 0;
 
-  transactions.forEach((transaction) => {
-    // If Data contains category already, add it to the existing
-    if (transaction.income) {
-      return;
-    }
-
-    if (data.some((item) => item.category === transaction.category)) {
-      // Access the data object and add the amount to it
-      data.forEach((item) => {
-        if (item.category === transaction.category) {
-          item.amount += transaction.amount;
-        }
-      });
-    } else {
-      // If not then add a new category
-      let tran = {
-        category: transaction.category,
-        amount: transaction.amount,
-      };
-
-      // and push to the data array
-      data.push(tran);
-    }
-  });
+  let data = categoryFilter(transactions);
 
   // total spend of all logged transactions on app (Could move to backend?)
   totalSpend = data.reduce((acc, current) => acc + current.amount, totalSpend);

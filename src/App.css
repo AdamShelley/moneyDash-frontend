@@ -31,7 +31,7 @@
 }
 
 .form-control > label {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   font-size: 0.8rem;
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
@@ -63,7 +63,7 @@
 #newAccountBalance {
   border: 1px solid #adb8db;
   box-shadow: none;
-  height: 40px;
+  height: 2rem;
 }
 
 #email,

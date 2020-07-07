@@ -105,8 +105,9 @@ table tbody tr td {
 }
 
 .transaction__modal {
-  left: 40%;
-  top: 55%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   height: 60%;
   width: 20%;
 }

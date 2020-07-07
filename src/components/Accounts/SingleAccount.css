@@ -6,11 +6,17 @@
   position: relative;
 }
 
-.account-page-card > i {
+.fas.fa-ellipsis-h {
   align-self: flex-end;
   opacity: 0;
-  visbility: none;
+  visibility: none;
   transition: all 0.3s ease-in-out;
+}
+
+.bank-icon {
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: #fff;
 }
 
 .account-page-card:hover i {

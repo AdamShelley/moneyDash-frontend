@@ -1,7 +1,7 @@
 .logger-info-container {
   /* border: 1px solid red; */
   height: 70vh;
-  width: 10%;
+  width: 15%;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -11,19 +11,24 @@
 
 .logger-info {
   height: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   background-color: #fafafa;
-  color: #333;
-  font-weight: 100;
+  color: #000;
+  font-weight: 600;
   padding: 1rem;
+  overflow-y: scroll;
 }
 
-.account-filter--boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+.logger-info--account-filter p,
+.logger-info--category-filter p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.logger-info--category-filter,
+.logger-info--account-filter {
+  text-align: center;
 }

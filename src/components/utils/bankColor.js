@@ -1,24 +1,29 @@
 export const bankColor = (bankName) => {
-  let backgroundColor;
+  let bankData = {
+    backgroundColor: "",
+    icon: "far fa-credit-card",
+  };
   switch (bankName) {
     case "Nationwide":
-      backgroundColor = "#4d52e0";
+      bankData.backgroundColor = "#4d52e0";
       break;
     case "1st Direct":
-      backgroundColor = "#000";
+      bankData.backgroundColor = "#000";
       break;
     case "Santander":
-      backgroundColor = "#e92d00";
+      bankData.backgroundColor = "#e92d00";
       break;
     case "AMEX":
-      backgroundColor = "#3762B6";
+      bankData.backgroundColor = "#3762B6";
+      bankData.icon = "fab fa-cc-amex";
       break;
+
     case "HSBC":
-      backgroundColor = "#DB290D";
+      bankData.backgroundColor = "#DB290D";
       break;
     default:
-      backgroundColor = "#4d52e0";
+      bankData.backgroundColor = "#4d52e0";
   }
 
-  return backgroundColor;
+  return bankData;
 };

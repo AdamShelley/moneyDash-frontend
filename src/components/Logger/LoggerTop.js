@@ -1,11 +1,14 @@
 import React from "react";
 
 import LoggerBox from "./LoggerBox";
+import { categoryFilter } from "../utils/categoryFilter";
 import "./LoggerTop.css";
 
 const LoggerTop = ({ accounts, transactions }) => {
   // Function to filter categories?
-  const filterCategories = () => {};
+  let rawData = categoryFilter(transactions);
+
+  let data = rawData.slice(0, 5);
 
   return (
     <div className="logger-info-container">
@@ -15,7 +18,9 @@ const LoggerTop = ({ accounts, transactions }) => {
           <div className="account-filter--boxes">
             {accounts &&
               accounts.map((account) => {
-                return <LoggerBox />;
+                return (
+                  <LoggerBox key={account._id} accounts account={account} />
+                );
               })}
           </div>
           {/* Loop around the accounts and display little boxes */}
@@ -24,9 +29,15 @@ const LoggerTop = ({ accounts, transactions }) => {
           {/* Loop around the transactions and display little boxes for each cat. */}
 
           <p>Categories</p>
-          {transactions &&
-            transactions.map((tran) => {
-              //   return <LoggerBox />;
+          {data &&
+            data.map((category) => {
+              return (
+                <LoggerBox
+                  key={category.category}
+                  categories
+                  category={category}
+                />
+              );
             })}
         </div>
       </div>

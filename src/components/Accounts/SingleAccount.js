@@ -92,7 +92,8 @@ const SingleAccount = ({
     modalHidden();
   };
 
-  const backgroundColor = bankColor(account.name);
+  const bankData = bankColor(account.name);
+  console.log(bankData);
 
   return (
     <li className="account " onClick={clickedHandler}>
@@ -174,7 +175,7 @@ const SingleAccount = ({
         }
       ></Modal>
       <Card
-        style={{ backgroundColor: backgroundColor || "#4d52e0" }}
+        style={{ backgroundColor: bankData.backgroundColor || "#4d52e0" }}
         addedClass={`account-page-card ${
           active && "account-page-card-active"
         } ${modalActive && "account-page-card-modal"}`}
@@ -186,6 +187,7 @@ const SingleAccount = ({
         )}
 
         <h3>{account.name}</h3>
+        <i className={`bank-icon ${bankData.icon}`}></i>
         <p>£{account.balance.toFixed(2)}</p>
       </Card>
     </li>
